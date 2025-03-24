@@ -15,8 +15,8 @@ header {
 .features {
     display: flex;
     justify-content: space-around;
-    margin: 20px;
     flex-wrap: wrap;
+    margin: 20px;
 }
 
 .feature-box {
@@ -29,7 +29,7 @@ header {
 }
 
 .feature-box:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .cta {
@@ -50,4 +50,4 @@ button {
 
 button:hover {
     background: #FFA500;
-  }
+}
