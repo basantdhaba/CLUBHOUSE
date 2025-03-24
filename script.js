@@ -4,4 +4,3 @@ function sharePage() {
     const whatsappLink = "https://wa.me/?text=" + encodeURIComponent(message);
     window.open(whatsappLink, "_blank");
 }
-
