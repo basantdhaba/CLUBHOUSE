@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rentease - ক্লাব সদস্যদের জন্য সুবিধা</title>
+    <title id="pageTitle">Rentease - ক্লাব সদস্যদের সুবিধা</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>🏠 <span id="title">Rentease</span></h1>
-        <p id="subtitle">পাড়ার ক্লাব কর্তৃক পরিচালিত নিরাপদ ভাড়া ব্যবস্থা</p>
+        <h1 id="title">🏠 Rentease</h1>
+        <p id="subtitle">🔹 <span>আপনার পাড়ার সম্পত্তি সুরক্ষিত রাখুন</span></p>
+        
         <label for="language">🌐 ভাষা পরিবর্তন:</label>
         <select id="language" onchange="changeLanguage()">
             <option value="bn">বাংলা</option>
@@ -18,6 +19,17 @@
         </select>
     </header>
 
+    <section class="benefits">
+        <h2 id="benefitTitle">ক্লাবের উপকারিতা</h2>
+        <ul class="animated-list">
+            <li id="benefit1">🏡 পাড়ার সম্পত্তি সুরক্ষিত থাকবে</li>
+            <li id="benefit2">💰 ব্রোকারেজের টাকা ক্লাবের উন্নতিতে লাগবে</li>
+            <li id="benefit3">👥 নতুন ভাড়াটেদের তথ্য রেকর্ড থাকবে</li>
+            <li id="benefit4">📊 সম্পত্তি কেনা-বেচার সঠিক তথ্য থাকবে</li>
+            <li id="benefit5">🔐 নিরাপত্তা ব্যবস্থা উন্নত হবে</li>
+        </ul>
+    </section>
+
     <section class="whatsapp-form">
         <h2 id="formTitle">🔍 আপনার তথ্য দিন</h2>
 
@@ -25,15 +37,14 @@
         <input type="text" id="whatsappNumber" placeholder="Ex: 9876543210" required>
         <button onclick="pickContact()">📞 কন্টাক্ট লিস্ট থেকে নির্বাচন করুন</button>
 
-        <label for="clubRole" id="roleLabel">🏅 আপনি ক্লাবের কী পদে আছেন?</label>
+        <label for="clubRole" id="roleLabel">🏅 ক্লাবে আপনার পদ:</label>
         <select id="clubRole">
             <option value="সাধারণ সদস্য">সাধারণ সদস্য</option>
             <option value="সেক্রেটারি">সেক্রেটারি</option>
             <option value="সভাপতি">সভাপতি</option>
-            <option value="অন্য">অন্য</option>
         </select>
 
-        <label for="clubName" id="clubNameLabel">🏛️ আপনার ক্লাবের নাম:</label>
+        <label for="clubName" id="clubNameLabel">🏛️ ক্লাবের নাম:</label>
         <input type="text" id="clubName" placeholder="Ex: XYZ ক্লাব" required>
 
         <label for="pinCode" id="pinCodeLabel">📍 পিন কোড:</label>
@@ -44,5 +55,5 @@
 
     <script src="script.js"></script>
 </body>
-            </html>
+    </html>
     
