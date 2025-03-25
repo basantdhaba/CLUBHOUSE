@@ -1,10 +1,20 @@
 function sendWhatsAppData() {
-    const phoneNumber = document.getElementById("whatsappNumber").value.trim();
+    let phoneNumber = document.getElementById("whatsappNumber").value.trim();
     const clubRole = document.getElementById("clubRole").value;
     const pinCode = document.getElementById("pinCode").value.trim();
     
-    if (phoneNumber === "" || pinCode === "") {
-        alert("অনুগ্রহ করে সঠিক তথ্য প্রদান করুন!");
+    // Ensure phone number is exactly 10 digits (Indian number format)
+    if (!/^\d{10}$/.test(phoneNumber)) {
+        alert("⚠️ অনুগ্রহ করে সঠিক ১০ ডিজিটের মোবাইল নম্বর লিখুন!");
+        return;
+    }
+
+    // Automatically add +91 prefix for WhatsApp
+    phoneNumber = "+91" + phoneNumber;
+
+    // Ensure pin code is valid (6-digit India format)
+    if (!/^\d{6}$/.test(pinCode)) {
+        alert("⚠️ অনুগ্রহ করে সঠিক ৬ ডিজিটের পিন কোড লিখুন!");
         return;
     }
 
