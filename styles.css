@@ -12,6 +12,14 @@ header {
     background: rgba(0, 0, 0, 0.6);
 }
 
+.club-benefits {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+}
+
 .whatsapp-form {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
