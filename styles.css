@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #4CAF50, #2E8B57);
+    background: linear-gradient(to right, #3b82f6, #2dd4bf); /* স্ক্রিনশটের মত ব্লু-গ্রিন গ্রেডিয়েন্ট */
     color: white;
     text-align: center;
 }
