@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #3b82f6, #2dd4bf); /* স্ক্রিনশটের মত ব্লু-গ্রিন গ্রেডিয়েন্ট */
+    background: linear-gradient(to right, #3b82f6, #2dd4bf);
     color: white;
     text-align: center;
 }
@@ -22,7 +22,7 @@ header {
 .feature-box {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    width: 30%;
+    width: 40%;
     border-radius: 10px;
     margin: 10px;
     transition: transform 0.3s;
@@ -45,6 +45,7 @@ button {
     background: #FFD700;
     cursor: pointer;
     border-radius: 5px;
+    margin: 10px;
     transition: background 0.3s;
 }
 
