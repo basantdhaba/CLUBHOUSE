@@ -1,6 +1,7 @@
 function sendWhatsAppData() {
     let phoneNumber = document.getElementById("whatsappNumber").value.trim();
     const clubRole = document.getElementById("clubRole").value;
+    const clubName = document.getElementById("clubName").value.trim();
     const pinCode = document.getElementById("pinCode").value.trim();
     
     // Ensure phone number is exactly 10 digits (Indian number format)
@@ -18,11 +19,12 @@ function sendWhatsAppData() {
         return;
     }
 
-    const adminNumber = "+91XXXXXXXXXX"; // এখানে আপনার WhatsApp নম্বর দিন
+    const adminNumber = "9804122966"; // ক্লাবের WhatsApp নম্বর
     const shareUrl = "https://yourwebsite.com/share-link"; // শেয়ার করার URL
 
     const message = `🌟 ক্লাব সদস্য তথ্য 🌟
     
+🏛️ ক্লাবের নাম: ${clubName}
 📱 WhatsApp নম্বর: ${phoneNumber}
 🏅 পদ: ${clubRole}
 📍 পিন কোড: ${pinCode}
