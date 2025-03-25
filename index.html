@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Rentease - Club Member Benefits</title>
+    <title id="pageTitle">Rentease - ক্লাব সদস্যদের সুবিধা</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,12 +19,17 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
         }
-        h2 {
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1, h2, h3 {
             color: #007bff;
         }
         ul {
-            list-style: none;
+            text-align: left;
             padding: 0;
         }
         ul li {
@@ -32,8 +37,13 @@
             padding: 10px;
             margin: 5px 0;
             border-radius: 5px;
+            animation: slideIn 0.5s ease-in-out;
         }
-        select, input, button {
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        input, select, button {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
@@ -55,97 +65,51 @@
 
     <div class="container">
         <h1 id="title">🏠 Rentease</h1>
-        <h2 id="subtitle">🔹 Secure Your Neighborhood Property</h2>
+        <h2 id="subtitle">🔹 আপনার পাড়ার সম্পত্তি সুরক্ষিত রাখুন</h2>
 
-        <label for="language">🌍 Select Language:</label>
+        <label for="language">🌍 ভাষা পরিবর্তন:</label>
         <select id="language" onchange="changeLanguage()">
-            <option value="en">English</option>
-            <option value="hi">हिन्दी</option>
             <option value="bn">বাংলা</option>
+            <option value="hi">हिन्दी</option>
+            <option value="en">English</option>
         </select>
 
-        <h3 id="benefitTitle">Club Benefits</h3>
+        <h3 id="benefitTitle">ক্লাবের উপকারিতা</h3>
         <ul>
-            <li id="benefit1">🏡 Neighborhood properties will be secured</li>
-            <li id="benefit2">💰 Brokerage money will be used for club development</li>
-            <li id="benefit3">👥 New tenant information will be recorded</li>
-            <li id="benefit4">📊 Accurate details on buying & selling properties</li>
-            <li id="benefit5">🔐 Security measures will be improved</li>
+            <li id="benefit1">🏡 পাড়ার সম্পত্তি সুরক্ষিত থাকবে</li>
+            <li id="benefit2">💰 ব্রোকারেজের টাকা ক্লাবের উন্নতিতে ব্যবহৃত হবে</li>
+            <li id="benefit3">👥 নতুন ভাড়াটেদের তথ্য রেকর্ড রাখা হবে</li>
+            <li id="benefit4">📊 সম্পত্তি কেনাবেচার সঠিক তথ্য পাওয়া যাবে</li>
+            <li id="benefit5">🔐 নিরাপত্তা ব্যবস্থা উন্নত করা হবে</li>
         </ul>
 
-        <h3 id="formTitle">🔍 Provide Your Information</h3>
-        <input type="text" id="clubName" placeholder="🏛️ Club Name">
-        <input type="text" id="whatsappNumber" placeholder="📱 Mobile Number (10 Digits)">
+        <h3 id="formTitle">🔍 আপনার তথ্য দিন</h3>
+        <input type="text" id="clubName" placeholder="🏛️ ক্লাবের নাম">
+        <input type="text" id="whatsappNumber" placeholder="📱 মোবাইল নম্বর (১০ ডিজিট)">
+        <button onclick="pickContact()">📞 ফোনবুক থেকে নম্বর বেছে নিন</button>
         <select id="clubRole">
-            <option value="Member">🏅 Club Member</option>
-            <option value="Secretary">📋 Secretary</option>
+            <option value="Member">🏅 ক্লাব সদস্য</option>
+            <option value="Secretary">📋 সম্পাদক</option>
         </select>
-        <input type="text" id="pinCode" placeholder="📍 PIN Code">
+        <input type="text" id="pinCode" placeholder="📍 PIN কোড">
 
-        <button id="sendButton" onclick="sendWhatsAppData()">📢 Send Information</button>
-        <button id="shareButton1">📲 Share with Club Members</button>
-        <button id="shareButton2">🏡 Share with Property Owners</button>
+        <button id="sendButton" onclick="sendWhatsAppData()">📢 তথ্য পাঠান</button>
+        <button id="welcomeAdmin" onclick="sendWelcomeMessage()">🎉 এডমিনকে ওয়েলকাম পাঠান</button>
     </div>
 
     <script>
-        const languageData = {
-            bn: {
-                pageTitle: "Rentease - ক্লাব সদস্যদের সুবিধা",
-                title: "🏠 Rentease",
-                subtitle: "🔹 আপনার পাড়ার সম্পত্তি সুরক্ষিত রাখুন",
-                benefitTitle: "ক্লাবের উপকারিতা",
-                benefit1: "🏡 পাড়ার সম্পত্তি সুরক্ষিত থাকবে",
-                benefit2: "💰 ব্রোকারেজের টাকা ক্লাবের উন্নতিতে লাগবে",
-                benefit3: "👥 নতুন ভাড়াটেদের তথ্য রেকর্ড থাকবে",
-                benefit4: "📊 সম্পত্তি কেনা-বেচার সঠিক তথ্য থাকবে",
-                benefit5: "🔐 নিরাপত্তা ব্যবস্থা উন্নত হবে",
-                formTitle: "🔍 আপনার তথ্য দিন",
-                sendButton: "📢 তথ্য পাঠান",
-                shareButton1: "📲 ক্লাব সদস্যদের শেয়ার করুন",
-                shareButton2: "🏡 পাড়ার মালিকদের শেয়ার করুন"
-            },
-            hi: {
-                pageTitle: "Rentease - क्लब सदस्य लाभ",
-                title: "🏠 Rentease",
-                subtitle: "🔹 अपने क्षेत्र की संपत्ति सुरक्षित रखें",
-                benefitTitle: "क्लब के लाभ",
-                benefit1: "🏡 क्षेत्र की संपत्ति सुरक्षित रहेगी",
-                benefit2: "💰 दलाली की राशि क्लब के विकास में लगेगी",
-                benefit3: "👥 नए किरायेदारों की जानकारी रिकॉर्ड होगी",
-                benefit4: "📊 संपत्ति खरीदने-बेचने की सही जानकारी मिलेगी",
-                benefit5: "🔐 सुरक्षा व्यवस्था बेहतर होगी",
-                formTitle: "🔍 अपनी जानकारी दें",
-                sendButton: "📢 जानकारी भेजें",
-                shareButton1: "📲 क्लब सदस्यों को साझा करें",
-                shareButton2: "🏡 पड़ोस के मालिकों को साझा करें"
-            },
-            en: {
-                pageTitle: "Rentease - Club Member Benefits",
-                title: "🏠 Rentease",
-                subtitle: "🔹 Secure Your Neighborhood Property",
-                benefitTitle: "Club Benefits",
-                benefit1: "🏡 Neighborhood properties will be secured",
-                benefit2: "💰 Brokerage money will be used for club development",
-                benefit3: "👥 New tenant information will be recorded",
-                benefit4: "📊 Accurate details on buying & selling properties",
-                benefit5: "🔐 Security measures will be improved",
-                formTitle: "🔍 Provide Your Information",
-                sendButton: "📢 Send Information",
-                shareButton1: "📲 Share with Club Members",
-                shareButton2: "🏡 Share with Property Owners"
+        function pickContact() {
+            if (!navigator.contacts) {
+                alert("⚠️ আপনার ডিভাইসে Contact Picker API নেই!");
+                return;
             }
-        };
-
-        function changeLanguage() {
-            const lang = document.getElementById("language").value;
-            document.title = languageData[lang].pageTitle;
-            
-            Object.keys(languageData[lang]).forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.innerText = languageData[lang][id];
+            navigator.contacts.select(["name", "tel"], { multiple: false })
+            .then(contacts => {
+                if (contacts.length > 0) {
+                    document.getElementById("whatsappNumber").value = contacts[0].tel[0];
                 }
-            });
+            })
+            .catch(err => console.error(err));
         }
 
         function sendWhatsAppData() {
@@ -155,28 +119,33 @@
             const pinCode = document.getElementById("pinCode").value.trim();
 
             if (!/^\d{10}$/.test(phoneNumber)) {
-                alert("⚠️ Please enter a valid 10-digit mobile number!");
+                alert("⚠️ সঠিক ১০ ডিজিটের মোবাইল নম্বর দিন!");
                 return;
             }
-
             phoneNumber = "+91" + phoneNumber;
 
             if (!/^\d{6}$/.test(pinCode)) {
-                alert("⚠️ Please enter a valid 6-digit PIN code!");
+                alert("⚠️ সঠিক ৬ ডিজিটের PIN কোড দিন!");
                 return;
             }
 
-            const adminNumber = "919804122966"; 
-            const message = `🏛️ Club Name: ${clubName}
-📱 WhatsApp Number: ${phoneNumber}
-🏅 Role: ${clubRole}
-📍 PIN Code: ${pinCode}`;
+            const adminNumber = "919804122966";
+            const message = `🏛️ ক্লাবের নাম: ${clubName}
+📱 মোবাইল নম্বর: ${phoneNumber}
+🏅 ভূমিকা: ${clubRole}
+📍 PIN কোড: ${pinCode}`;
 
             const whatsappLink = `https://wa.me/${adminNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappLink, "_blank");
+        }
+
+        function sendWelcomeMessage() {
+            const adminNumber = "919804122966";
+            const welcomeMessage = "🎉 স্বাগতম! আপনার তথ্য গৃহীত হয়েছে। ধন্যবাদ! 😊";
+            const whatsappLink = `https://wa.me/${adminNumber}?text=${encodeURIComponent(welcomeMessage)}`;
             window.open(whatsappLink, "_blank");
         }
     </script>
 
 </body>
-                </html>
-    
+</html>
