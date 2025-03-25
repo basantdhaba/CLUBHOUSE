@@ -14,7 +14,9 @@ const languageData = {
         roleLabel: "🏅 ক্লাবে আপনার পদ:",
         clubNameLabel: "🏛️ ক্লাবের নাম:",
         pinCodeLabel: "📍 পিন কোড:",
-        sendButton: "📢 তথ্য পাঠান"
+        sendButton: "📢 তথ্য পাঠান",
+        shareButton1: "📲 ক্লাব সদস্যদের শেয়ার করুন",
+        shareButton2: "🏡 পাড়ার মালিকদের শেয়ার করুন"
     },
     hi: {
         pageTitle: "Rentease - क्लब सदस्य लाभ",
@@ -31,7 +33,9 @@ const languageData = {
         roleLabel: "🏅 क्लब में आपकी भूमिका:",
         clubNameLabel: "🏛️ क्लब का नाम:",
         pinCodeLabel: "📍 पिन कोड:",
-        sendButton: "📢 जानकारी भेजें"
+        sendButton: "📢 जानकारी भेजें",
+        shareButton1: "📲 क्लब सदस्यों को साझा करें",
+        shareButton2: "🏡 पड़ोस के मालिकों को साझा करें"
     },
     en: {
         pageTitle: "Rentease - Club Member Benefits",
@@ -48,7 +52,9 @@ const languageData = {
         roleLabel: "🏅 Your Role in Club:",
         clubNameLabel: "🏛️ Club Name:",
         pinCodeLabel: "📍 PIN Code:",
-        sendButton: "📢 Send Information"
+        sendButton: "📢 Send Information",
+        shareButton1: "📲 Share with Club Members",
+        shareButton2: "🏡 Share with Property Owners"
     }
 };
 
